@@ -1,8 +1,8 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import { ProductProvider } from "./Contexts/ProductContext";
 
+import { AppContextProvider } from "./Contexts/AppContextProvider";
 import { Header } from "./Components/header";
 import { ProductList } from "./Pages/productList";
 import { ProductDetail } from "./Pages/ProductDetail";
@@ -11,7 +11,7 @@ import { WishList } from "./Pages/WishList";
 
 function App() {
   return (
-    <ProductProvider>
+    <AppContextProvider>
       <div>
         <Header />
         <Routes>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/wishlist" element={<WishList />} />
         </Routes>
       </div>
-    </ProductProvider>
+    </AppContextProvider>
   );
 }
 
