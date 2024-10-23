@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../Contexts/ProductContext";
+import {addToCart} from '../Contexts/CartContext'
 
 export function ProductCart(product) {
   const { id, name, description, price, quantity, brand, noDetail } = product;
@@ -22,6 +23,7 @@ export function ProductCart(product) {
         <div>
           <p>Quantity : {quantity}</p>
           <p>Brand : {brand}</p>
+          <button onClick={()=>addToCart(product)}>Add To Cart</button>
         </div>
       )}
     </li>
