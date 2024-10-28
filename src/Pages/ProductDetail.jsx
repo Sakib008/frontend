@@ -12,6 +12,7 @@ export function ProductDetail() {
     if (product.length === 0 || singleProduct.length === 0) {
       handleFetchProduct();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (singleProduct.length > 0) {
@@ -20,7 +21,6 @@ export function ProductDetail() {
     Product = product.find(({ id }) => parseInt(productID) === id);
   }
   console.log(typeof productID);
-  // const showLoad = {isLoading ? `Wait A Second` : `Product not Found`}
   const showLoad = isLoading ? "wait a Second " : "Product not Found";
   return (
     <div>
